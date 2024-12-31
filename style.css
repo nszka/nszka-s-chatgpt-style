@@ -1,0 +1,103 @@
+ /*全局样式*/
+
+/* 隐藏类名包含 "text-center" 的元素 */
+.text-center {
+    display: none; /* 设置 display: none，隐藏居中文本 */
+}
+
+
+/* 响应式设计：在屏幕宽度大于等于 768px 时，修改 .md:max-w-3xl 的最大宽度为 80% */
+@media (min-width: 768px) {
+    .md\:max-w-3xl {
+        max-width: 80% !important; /* 设置最大宽度为 80% */
+    }
+}
+
+
+/* 修改整体背景色为绿色 */
+body {
+    background-color: #a5d6a7 !important; /* 设置背景色为绿色 (#a5d6a7)，并强制应用该样式 */
+}
+
+/*-----------------------------------------------------------------------------*/
+/* 定义透明度变量 */
+
+
+:root {
+    --background-opacity: 0.5; /* 自定义透明度变量，取值范围从 0 到 1 */
+}
+
+/* 使用变量来设置透明背景 */
+.bg-token-main-surface-primary {
+    background-color: rgba(165, 214, 167, var(--background-opacity)); /* 使用自定义透明度变量 */
+}
+
+
+/*---------------------------------------------------------------------- */
+/*  代码块  */
+
+
+/* 将 .bg-token-sidebar-surface-primary 背景设置为透明 */
+.bg-token-sidebar-surface-primary {
+    background-color: transparent; /* 设置背景色为透明 */
+}
+
+
+/* 删除 .border-\[0\.5px\] 样式 */
+.border-\[0\.5px\] {
+    border-width: .0px;
+}
+
+
+/* 设置代码块外观：奶白色半透明背景、圆角、阴影和其他优化 */
+.prose :where(pre):not(:where([class~=not-prose] *)) 
+{
+    background-color: rgba(255, 255, 255, 0.9); /* 奶白色半透明背景，增加不透明度 */
+    border-radius: 0.5rem; /* 更圆的圆角效果 */
+    color: currentColor; /* 文字颜色继承父级颜色 */
+    font-size: 1em; /* 设置字体大小 */
+    font-weight: 400; /* 设置正常字体粗细 */
+    line-height: 1.7142857; /* 设置行高 */
+    margin: 1.5rem 0; /* 增加上下边距，确保卡片之间的间距 */
+    overflow-x: auto; /* 当内容超出时显示横向滚动条 */
+    padding: 1.5rem; /* 增加内边距，提升可读性和空间感 */
+    
+    /* 设置更具层次感的阴影效果 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.05); /* 更柔和且多重的阴影效果 */
+    
+    /* 使阴影不干扰背景色 */
+    transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out; /* 添加过渡效果 */
+  
+}
+
+
+/* 优化代码中的行高和字体大小，保持可读性 */
+code, pre {
+    font-size: 1rem; /* 设置字体大小 */
+    font-family: 'Microsoft YaHei', '微软雅黑', ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace !important;
+    font-weight: 400; /* 设置字体粗细为正常 */
+}
+
+
+
+/*---------------------------------------------------------------------------------------------------------*/
+/*对话框*/
+.bg-\[\#f4f4f4\] {
+    background-color: rgba(255, 255, 255, 0.3); /* 奶白色背景，透明度为 30% */
+}
+
+
+/*  -----------------------------------------------------------------------------*/
+/*  侧边栏样式*/
+
+
+.bg-\[var\(--item-background-color\)\] {
+    background-color: rgba(var(--item-background-color), 0.5); /* 使用原背景色并设置透明度为 30% */
+}
+
+
+.to-transparent {
+    --tw-gradient-from: transparent var(--tw-gradient-from-position); /* 设置渐变起点为透明 */
+    --tw-gradient-to: transparent var(--tw-gradient-to-position); /* 设置渐变终点为透明 */
+}
+
