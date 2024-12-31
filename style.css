@@ -19,6 +19,16 @@ body {
     background-color: #a5d6a7 !important; /* 设置背景色为绿色 (#a5d6a7)，并强制应用该样式 */
 }
 
+.prose :where(code):not(:where([class~=not-prose] *)) {
+    background-color: rgba(255, 250, 240, 0.4); /* 乳白色背景，透明度 40% */
+    border-radius: .25rem;
+    color: var(--tw-prose-code); /* 代码文本颜色 */
+    font-size: .875em; /* 字体大小 */
+    font-weight: 500; /* 字体粗细 */
+    padding: .15rem .3rem; /* 内边距 */
+}
+
+
 /*-----------------------------------------------------------------------------*/
 /* 定义透明度变量 */
 
@@ -49,10 +59,12 @@ body {
 }
 
 
+
+
 /* 设置代码块外观：奶白色半透明背景、圆角、阴影和其他优化 */
 .prose :where(pre):not(:where([class~=not-prose] *)) 
 {
-    background-color: rgba(255, 255, 255, 0.9); /* 奶白色半透明背景，增加不透明度 */
+    background-color: rgba(255, 255, 255, 0.5); /* 奶白色半透明背景，增加不透明度 */
     border-radius: 0.5rem; /* 更圆的圆角效果 */
     color: currentColor; /* 文字颜色继承父级颜色 */
     font-size: 1em; /* 设置字体大小 */
